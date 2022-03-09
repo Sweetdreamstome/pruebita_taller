@@ -11,12 +11,6 @@ from otree.api import (
 
 
 doc = """
-One player decides how to divide a certain amount between himself and the other
-player.
-
-See: Kahneman, Daniel, Jack L. Knetsch, and Richard H. Thaler. "Fairness
-and the assumptions of economics." Journal of business (1986):
-S285-S300.
 
 """
 
@@ -29,7 +23,7 @@ class Constants(BaseConstants):
     instructions_template = 'dictator/instructions.html'
 
     # Initial amount allocated to the dictator
-    endowment = c(100)
+    endowment = c(50)
 
 
 class Subsession(BaseSubsession):
@@ -43,6 +37,7 @@ class Group(BaseGroup):
         max=Constants.endowment,
         label="I will keep",
     )
+    total= models.IntegerField(label="total")
 
     def set_payoffs(self):
         p1 = self.get_player_by_id(1)

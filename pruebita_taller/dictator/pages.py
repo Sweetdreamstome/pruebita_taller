@@ -8,7 +8,7 @@ class Introduction(Page):
 
 class Offer(Page):
     form_model = 'group'
-    form_fields = ['kept']
+    form_fields = ['kept','total']
 
     def is_displayed(self):
         return self.player.id_in_group == 1
