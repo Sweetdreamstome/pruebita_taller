@@ -37,6 +37,7 @@ class Group(BaseGroup):
         max=Constants.endowment,
         label="I will keep",
     )
+    total= models.IntegerField(label="total")
 
     def set_payoffs(self):
         p1 = self.get_player_by_id(1)
